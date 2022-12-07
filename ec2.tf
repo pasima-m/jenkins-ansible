@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = "ami-03542b5588cd0e6b3"
   security_groups = ["jkSG"]    
   instance_type = "t2.micro"
   key_name      =  "delete"
