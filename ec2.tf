@@ -1,15 +1,22 @@
-provider "aws" {
-      region = "eu-west-2"
-}
-
-resource "aws_instance" "web" {
-    ami           = "ami-03542b5588cd0e6b3"
-    instance_type = "t2.micro"
-    security_groups = ["jkSG"]
-    key_name      =  "delete"
-    tags = {
-        Name = " tomcat"
-        Environment = "dev"
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.45.0"
+    }
   }
 }
 
+provider "aws" {
+  region = "eu-west-2"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-03542b5588cd0e6b3"
+  instance_type = "t2.micro"
+  security_groups = ["demosg"]
+  key_name  = "delete"
+  tags = {
+    Name = "Tomcat"
+  }
+}
