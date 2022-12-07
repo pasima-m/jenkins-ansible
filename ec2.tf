@@ -14,8 +14,6 @@ provider "aws" {
 resource "aws_instance" "ec2-instance" {
   ami           = "ami-03542b5588cd0e6b3"
   instance_type = "t2.micro"
-  security_groups = ["demosg"]
-  key_name  = "delete"
   tags = {
     Name = "Tomcat"
   }
